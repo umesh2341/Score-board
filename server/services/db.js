@@ -19,6 +19,3 @@ export const database={
     }
         
     }
-
-const data =await database.loginUser("bgmiop139@gmail.com","123456")
-console.log(data);
