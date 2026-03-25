@@ -32,7 +32,11 @@ function Scoreboard() {
   }
 
   useEffect(() => {
-    const Socket = io("http://localhost:3000");
+    const Socket = io("http://localhost:3000",{
+      auth:{
+        token:localStorage.getItem("token")
+      }
+    });
 
     Socket.on("connect", () => {
       console.log("connected with socket id", Socket.id);

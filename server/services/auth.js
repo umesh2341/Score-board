@@ -1,4 +1,4 @@
-import { dbService } from "../thridpartyServices"
+import { dbService } from "../thridpartyServices.js"
 
 export const authMiddleWare=async(req,res,next)=>{
     const token=req.headers.authorisation;
