@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 
-function Scoreboard() {
+function EScoreboard() {
   const [newplayer, setnewplayer] = useState({
     name: "",
     score: ""
@@ -42,7 +42,7 @@ function Scoreboard() {
       console.log("connected with socket id", Socket.id);
     });
 
-    Socket.on("player:update", (data) => {
+    Socket.on("players:update", (data) => {
       setscoreList(data);
     });
 
@@ -53,6 +53,7 @@ function Scoreboard() {
 
   return (
     <div>
+   
       <form onSubmit={handleSubmit}>
         <input
           name="name"
@@ -69,17 +70,19 @@ function Scoreboard() {
           value={newplayer.score}
           onChange={handleChange}
         />
+        <button type='submit'>Button</button>
       </form>
-
-      <ul>
+             <ul>
         {scoreList.map((i, j) => (
           <li key={j}>
             {i.name} - {i.score}
           </li>
         ))}
       </ul> 
+
+  
     </div>
   );
 }
 
-export default Scoreboard;9
+export default EScoreboard;
