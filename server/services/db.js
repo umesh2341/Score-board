@@ -21,9 +21,8 @@ export const database={
     async getuser(token){
     const {data,error}=await dbService.auth.getUser(token);
     if(error) throw error;
-    return data.user.id;
-    }
-    ,
+    return data;
+    },
     async findName(id){
         const {data,error}=await dbService.from('usrs').select('name').eq('id',id);
         if(error) throw error;
@@ -31,7 +30,7 @@ export const database={
     }
         
     }
-// const datas=await database.getuser("eyJhbGciOiJFUzI1NiIsImtpZCI6ImIzNGM2NWFhLWQ3NTUtNDY4MS1hYmQwLWExMzQ1NTYzNGMxZiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3V5d2VkdnNyamJvbWtncHl4cHd5LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI2Mzg0ZmQzMy03YmMyLTQ1MTgtODg1OS0wZGYzOWFiMTYzZmIiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzc0NDE1NDcxLCJpYXQiOjE3NzQ0MTE4NzEsImVtYWlsIjoiYmdtaW9wMTM5QGdtYWlsLmNvbSIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWxfdmVyaWZpZWQiOnRydWV9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzc0NDExODcxfV0sInNlc3Npb25faWQiOiIyNTFjZDg4NC1hYjkzLTRhNjEtYjU2ZC1kOWE4YmJhODEwMzAiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.aZd-8c6z9zX-Nx6rXHXZWSdMAMHSdgr6Vtx3_0QXhu_YQO4MsxThPwRj4qPaRtG--8EUQPc2n6nzo14LP6tmXQ")
-// console.log(datas);
-//  const datas=await database.findName('6384fd33-7bc2-4518-8859-0df39ab163fb');
-//  console.log(datas)
+// const datas=await database.getuser("eyJhbGciOiJFUzI1NiIsImtpZCI6ImIzNGM2NWFhLWQ3NTUtNDY4MS1hYmQwLWExMzQ1NTYzNGMxZiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3V5d2VkdnNyamJvbWtncHl4cHd5LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI2Mzg0ZmQzMy03YmMyLTQ1MTgtODg1OS0wZGYzOWFiMTYzZmIiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzc0Njc1NTc4LCJpYXQiOjE3NzQ2NzE5NzgsImVtYWlsIjoiYmdtaW9wMTM5QGdtYWlsLmNvbSIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWxfdmVyaWZpZWQiOnRydWV9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzc0NjcxOTc4fV0sInNlc3Npb25faWQiOiI5Mzg3ZWIzOS1mZGMwLTQwOGQtODk1YS0wYjljMGVjZGZjMmEiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.4ZAc9RWuLLc262fpWWV3HalQw65o3GRWnQc_tCTvLuxWnW6iHBs7cB7Ceg8v9EFfPM-jxPLBHR6syDNI3CvgBw")
+// console.log(datas)
+// const datass=await database.findName('6384fd33-7bc2-4518-8859-0df39ab163fb');
+//  console.log(datass)

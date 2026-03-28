@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 function AdminLogin({ setToken }) {
+  const navigate = useNavigate();
+  
   const [detail, setDetail] = useState({ 
     email: "",
     password: "",
@@ -36,8 +38,10 @@ function AdminLogin({ setToken }) {
 
       
       localStorage.setItem("token", data.token);
-      setToken(data.token);
+      localStorage.setItem("toekn",data.name);
 
+      setToken(data.token);
+      navigate("/admin");
     } catch (err) {
       setError(err.message);
     }
