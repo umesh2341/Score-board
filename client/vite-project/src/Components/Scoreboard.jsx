@@ -12,7 +12,7 @@ function Scoreboard() {
       console.log(Socket.id);
     });
 
-    Socket.on("players:update", (data) => { // ✅ fixed
+    Socket.on("players:update", (data) => {
       setscore(data);
     });
 
